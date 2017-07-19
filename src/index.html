@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <%= t.include("partials/_head.html") %>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <%= t.include("partials/_nav.html") %>
+  </head>
+  <body>
+
+    <header>
+    
+      <h1>Guide to Washington&rsquo;s<span class="secondary">hiking trails</span></div></h1>
+        <img class="header-image" src="./assets/hiking-trail.jpg">
+    </header>
+    <main>
+
+      <p class="intro">
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros
+      </p>
+
+      <section class="trail-info">
+        <div class="filters">
+          Search by mileage:
+              <select class="milesFilter">
+                <option>1- 10</option>
+                <option>10 - 20</option>
+                <option>21+</option>
+              </select>
+
+          <!-- by region -->
+
+          <%
+            var regions = [];
+
+            function isInArray(regions, region_name) {
+              return regions.indexOf(region_name) > -1;
+            }
+
+            json.trails.forEach(function(k) {
+              var region_name = k.region;
+              if (!isInArray(regions, region_name)) {
+                regions.push(region_name);
+              }
+            }) %>
+
+
+          Search by region:
+            <select class="regionsList">
+            <% for (var i=0; i < regions.length; i++) { %>
+              <option value="<%= regions[i] %>">
+                <%= regions[i] %>
+              </option>
+            <% } %>
+            </select>
+
+          <!-- end of by region -->
+        </div>
+
+        <%
+          json.trails.forEach(function(x) { %>
+
+          <div miles="<%= x.miles %>" region="<%= x.region %>">
+            <h2><%= x.name %></h2>
+
+            <ul class="trail-detail">
+              <li>Distance: <%= x.miles %> miles, roundtrip</li>
+              <li>Elevation gain: <%= x.elevation %> ft.</li>
+            </ul>
+
+              <div class="detail-map">
+                <div class="img-caption-summary">
+                  <img src="./assets/trailphotos/<%= x.image %>.jpg">
+                  <p class="caption"><%= x.caption%></p>
+
+                  <p class="summary">
+                    <%= x.summary %>
+                  </p>
+
+                  <a href="<%= x.link %>" class="button">Read more</a>
+                </div>
+
+                <div class="map-container">
+                  <leaflet-map zoom="7" lat="<%= x.lat %>" lng="<%= x.lng %>">
+                    <tile-layer layer="esriTopographic"></tile-layer>
+                    <map-marker class="locationMarker" lat="<%= x.lat %>" lng="<%= x.lng %>">
+                      <b><u><%= x.name %></u></b>
+                      <br><%= x.area %> - <%= x.region %>
+                      <br><a href="https://www.google.com/maps/place/Ancient+Lakes+trail+head/@<%= x.lat %>,<%= x.lng %>">Get directions</a>
+                    </map-marker>
+                  </leaflet-map>
+                </div>
+              </div>
+            <hr>
+          </div>
+
+        <% });%>
+
+        
+      </section>
+
+
+
+    </main>
+
+    <%= t.include("partials/_navBottom.html") %>
+
+    <script>
+      window.trails = <%= JSON.stringify(json.trails) %>;
+    </script>
+
+    <script src="app.js" async></script>
+    <% if (json.project.production) { %>
+    <%= !json.project.embedded ? t.include("partials/_foot.html") : "" %>
+    <%= t.include("partials/_workHere.html") %>
+    <% } %>
+  </body>
+</html>

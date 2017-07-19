@@ -1,0 +1,183 @@
+@import "seattletimes";
+
+header {
+
+  max-width: 800px;
+  margin: auto;
+  padding-top: 50px;
+
+
+  h1 {
+    margin-top: 0px;
+    font-family: @df-sans;
+    text-align: center;
+    font-size: 38px;
+    font-weight: normal;
+    text-transform: uppercase;
+    line-height: 60px;
+    color: @light-brown;
+
+    @media @mobile {
+      font-size: 25px;
+      line-height: 40px;
+    }
+  }
+
+  .secondary {
+    display: block;
+    font-size: 80px;
+    font-weight: bold;
+    font-family: @df-serif;
+    color: @dark-brown;
+
+    @media @mobile {
+      font-size: 40px;
+    }
+  }
+
+  .header-image {
+    // padding-top: 100px;
+    width: 900px;
+    text-align: center;
+  }
+}
+
+main {
+  .intro {
+    max-width: 960px;
+    margin: auto;
+    padding-bottom: 70px;
+    padding-top: 30px;
+    line-height: 35px;
+    text-align: center;
+
+    @media @mobile {
+      padding: 30px;
+
+      font-size: 16px;
+    }
+  }
+
+  .trail-info {
+    max-width: 750px;
+    margin: auto;
+
+    .filters {
+      font-family: @df-sans;
+    }
+
+    h2 {
+      font-size: 35px;
+      margin-bottom: 10px;
+      font-style: italic;
+
+      @media @mobile {
+        font-size: 25px;
+      }
+    }
+
+    h2::after {
+      content: "";
+      display: block;
+      height: 5px;
+      background-color: @light-brown;
+      width: 25%;
+    }
+
+    .trail-detail {
+      font-family: @df-sans;
+      list-style-type: none;
+      padding: 8px 0 5px 0;
+      text-transform: uppercase;
+      font-size: 14px;
+      color: @df-middle-gray;
+      font-weight: bold;
+    }
+
+    .detail-map {
+      .display-flex();
+
+      @media @mobile {
+        display: block;
+      }
+      
+      .img-caption-summary {
+        .flex(0 0 70%);
+        padding-right: 20px;
+
+        img {
+          width: 100%;
+        }
+
+        .caption {
+          font-size: 13px;
+          font-family: @df-sans;
+          display: block;
+          color: @df-middle-gray;
+          margin-top: 2px;
+        }
+
+        .summary {
+          padding-top: 10px;
+        }
+
+        .button {
+          font-family: @df-sans;
+          text-transform: uppercase;
+          padding: 10px;
+          color: white;
+          margin-top: 15px;
+          height: 30px;
+          font-size: 12px;
+          background: @dark-brown;
+          border: 1px solid @df-light-gray;
+          border-radius: 4px;
+
+          @media @mobile {
+            width: 100px;
+            height: 30px;
+            margin-bottom: 10px;
+          }
+
+          &:hover, &:focus {
+            background: @light-brown;
+            color: black;
+          }
+        }
+      }
+      
+      .map-container {
+        .flex(0 0 30%);
+        font-family: @df-sans;
+
+        @media @mobile {
+          display: block;
+        }
+
+        leaflet-map {
+          height: 250px;
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  hr {
+    background-color: pink;
+    margin: 45px 0 45px 0;
+  }
+}
+
+//map styles
+.locationMarker {
+  background-color: #935B40;
+  border-radius: 100%;
+  border: 2px solid #59403B;
+  opacity: .6;
+  width: 16px;
+  height: 16px;
+}
+
+.hidden {
+  display: none;
+}

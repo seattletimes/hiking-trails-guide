@@ -1,0 +1,117 @@
+[
+  {
+    "name": "Sunrise Visitor Center",
+    "lon": -121.643463,
+    "lat": 46.914454,
+    "icon": "child",
+    "description": "At 6,400 feet, Sunrise is the highest point in the park accessible by vehicle",
+    "link": "http://visitrainier.com/sunrise-visitor-center/"
+  },
+  {
+    "name": "Naches Peak Loop Trail",
+    "lon": -121.515436,
+    "lat": 46.872135,
+    "icon": "child",
+    "description": "Distance: 4.5-mile loop </br> Elevation Gain: 700 ft </br> Duration: 3 hrs",
+    "link": "http://visitrainier.com/naches-peak-2/"
+  },
+  {
+    "name": "Paradise",
+    "lon": -121.734973,
+    "lat": 46.786256,
+    "icon": "child",
+    "description": "At 5,400 feet, Paradise has the busiest visitor center in the park.",
+    "link": "http://visitrainier.com/places-and-attractions/park-regions/paradise/"
+  },
+  {
+    "name": "Narada Falls",
+    "lon": -121.746217,
+    "lat": 46.775118,
+    "icon": "child",
+    "description": "Distance: 7.6 miles RT </br> Elevation Gain: 1000 ft </br> Duration: 3.5 hrs",
+    "link": "http://visitrainier.com/paradise-river-narada-falls-2/"
+  },
+  {
+    "name": "Grove of the Patriarchs",
+    "lon": -121.5575,
+    "lat": 46.758056,
+    "icon": "child",
+    "description": "Distance: 1.1 miles RT </br> Elevation Gain: 0 </br> Duration: 1 hr",
+    "link": "http://visitrainier.com/grove-of-the-patriarchs-2/"
+  },
+  {
+    "name": "Burroughs Mountain loop",
+    "lon": -121.64375,
+    "lat": 46.915833,
+    "icon": "blind",
+    "description": "Distance: 7 miles RT </br> Elevation Gain: 1,000 ft </br> Duration: 3-4 hrs",
+    "link": "http://visitrainier.com/burroughs-mountains-2/"
+  },
+  {
+    "name": "Summerland",
+    "lon": -121.6103,
+    "lat": 46.88812,
+    "icon": "blind",
+    "description": "Distance: 8 miles RT </br> Elevation Gain: 2,750 ft </br> Duration: 5-7 hrs",
+    "link": "http://visitrainier.com/summerland/"
+  },
+  {
+    "name": "Crystal Peak",
+    "lon": -121.534904,
+    "lat": 46.919545,
+    "icon": "blind",
+    "description": "Distance: 7 miles RT </br> Elevation Gain: 3,100 ft </br> Duration: 6 hrs",
+    "link": "http://visitrainier.com/crystal-peak-2/"
+  },
+  {
+    "name": "Shriner Peak",
+    "lon": -121.555,
+    "lat": 46.801667,
+    "icon": "blind",
+    "description": "Distance: 8.4 miles RT </br> Elevation Gain: 3,434 ft </br>  Duration: 5-7 hrs",
+    "link": "http://visitrainier.com/shriner-peak/"
+  },
+  {
+    "name": "Skyline Trail",
+    "lon": -121.734167,
+    "lat": 46.787056,
+    "icon": "blind",
+    "description": "Distance: 5.5-mile loop </br> Elevation Gain: 1,700 ft </br> Duration: 4 hrs",
+    "link": "http://visitrainier.com/skyline-trail-panorama-point/"
+  },
+  {
+    "name": "Spray Park",
+    "lon": -121.8637337,
+    "lat": 46.9328,
+    "icon": "blind",
+    "description": "Distance: 8 miles RT </br> Elevation Gain: 2,200 ft </br> Duration: 3 hrs",
+    "link": "http://visitrainier.com/spray-park-trail/"
+  },
+  {
+    "name": "Wonderland Trail",
+    "lon": -121.812444,
+    "lat": 46.750417,
+    "icon": "certificate",
+    "description": "Distance: 93 miles </br> Elevation Gain: 3,500 ft avg daily gain/loss </br> Duration: 10-14 days",
+    "link": "http://visitrainier.com/wonderland-trail-overview/"
+  },
+  {
+    "name": "Chinook Pass",
+    "lon": -121.51572,
+    "lat": 46.872344,
+    "icon": "car",
+    "description": "Look out for some fantastic views before cresting at Chinook Pass.",
+    "link": "http://visitrainier.com/chinook-pass-sr-410/"
+  },
+  {
+    "name": "Stevens Canyon Road",
+    "lon": -121.647081,
+    "lat": 46.760029,
+    "icon": "car",
+    "description": "Along this road, see a hulking view of Rainier west of Box Canyon.",
+    "link": "http://visitrainier.com/stevens-canyon-road/"
+  },
+  {
+    "name": "these are from: http://www.seattletimes.com/life/travel/celebrate-washingtons-national-parks-with-a-hike-a-drive-an-adventure/"
+  }
+]

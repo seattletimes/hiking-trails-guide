@@ -1,0 +1,20 @@
+{
+  "s3": {
+    "stage": {
+      "bucket": "projects-staging.seattletimes.com",
+      "path": "rotten-quart"
+    },
+    "live": {
+      "bucket": "projects.seattletimes.com",
+      "path": ""
+    }
+  },
+  "title": "",
+  "description": "",
+  "url": "",
+  "image": "assets/social.jpg",
+  "sheets": ["1C50sLcqf59tGvtK2IYK4nizYCLW6LN8uhwmKPgpR-3c"],
+  "standout": false,
+  "embedded": false,
+  "production": false
+}
