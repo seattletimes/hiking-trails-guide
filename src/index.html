@@ -20,11 +20,13 @@
 
       <section class="trail-info">
         <div class="filters">
+
           Search by mileage:
               <select class="milesFilter">
-                <option>1- 10</option>
-                <option>10 - 20</option>
-                <option>21+</option>
+                <option limitValue = "">Show all</option>
+                <option limitValue = "10">1- 10</option>
+                <option limitValue = "20">11 - 20</option>
+                <option limitValue = "none">21+</option>
               </select>
 
           <!-- by region -->
@@ -46,6 +48,9 @@
 
           Search by region:
             <select class="regionsList">
+              <option value="">
+                Show all
+              </option>
             <% for (var i=0; i < regions.length; i++) { %>
               <option value="<%= regions[i] %>">
                 <%= regions[i] %>
