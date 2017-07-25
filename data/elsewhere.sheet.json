@@ -1,0 +1,30 @@
+[
+  {
+    "order": 1,
+    "category": "Outdoors",
+    "title": "Sign up for our outside guide newsletter",
+    "link": "http://www.seattletimes.com/newsletters/outside-guide/",
+    "image": "quad1"
+  },
+  {
+    "order": 2,
+    "category": "Quiz",
+    "title": "How well do you know our national parks?",
+    "link": "http://projects.seattletimes.com/2016/quizzes/parks-quiz-2016/",
+    "image": "quad2"
+  },
+  {
+    "order": 3,
+    "category": "Northwest",
+    "title": "What it’s like to spend 9 days in PNW backcountry",
+    "link": "http://www.seattletimes.com/life/outdoors/students-trek-a-reset-for-the-human-spirit-as-national-park-service-turns-100/",
+    "image": "quad3"
+  },
+  {
+    "order": 4,
+    "category": "Travel",
+    "title": "What to do in Washington’s national parks",
+    "link": "http://www.seattletimes.com/life/travel/celebrate-washingtons-national-parks-with-a-hike-a-drive-an-adventure/",
+    "image": "quad4"
+  }
+]

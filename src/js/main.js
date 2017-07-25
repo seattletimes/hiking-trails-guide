@@ -1,5 +1,6 @@
 require("./lib/social");
-// require("./lib/ads");
+require("./lib/geolocation");
+require("./lib/ads");
 // var track = require("./lib/tracking");
 
 require("component-responsive-frame/child");
@@ -35,40 +36,48 @@ var size = 16;
 // })
 
 // filter by region
-var filterByRegion = function() {
+var filterByRegion = function(list) {
   var value = regionFilter.value;
+  if (!value) return;
 
-  trailRegion.forEach(function(item) {
-    var region = item.getAttribute("region");
-    if (region == value || ! value) {
-      item.classList.remove("hidden");
-    } else {
-      item.classList.add("hidden");
+  list.forEach(function(item) {
+    var region = item.element.getAttribute("region");
+    if (!region) return;
+    if (region != value) {
+      item.show = false;
     }
-  })
+  });
 };
 
 //filter by miles
-var filterByMiles = function() {
-  var roundtrip = milesFilter.limitValue;
+var filterByMiles = function(list) {
+  var value = milesFilter.value;
+  if (!value) return;
+  var [min, max] = value.split(";").map(Number);
 
-  trailMiles.forEach(function(item) {
-    var miles = item.getAttribute("miles");
-    if (miles <= limitValue || !limitValue) {
-      item.classList.remove("hidden");
-    } else {
-      item.classList.add("hidden");
+  list.forEach(function(item) {
+    var miles = item.element.getAttribute("miles") * 1;
+    if (miles < min || miles > max) {
+      item.show = false;
     }
-  })
+  });
+};
 
-
-
+var showHide = function(list) {
+  list.forEach(function(item) {
+    if (item.show) {
+      item.element.classList.remove("hidden");
+    } else {
+      item.element.classList.add("hidden");
+    }
+  });
 };
 
 var applyFilters = function() {
-  filterByRegion();
-  filterByMiles();
+  var filtered = $(".trail").map(el => ({ element: el, show: true }));
+  [filterByMiles, filterByRegion, showHide].forEach(f => f(filtered));
 };
 
 regionFilter.addEventListener("change", applyFilters);
 milesFilter.addEventListener("change", applyFilters);
+applyFilters();

@@ -7,6 +7,8 @@
   </head>
   <body>
 
+     <%= t.include("partials/_ad.html", { type: "banner" }) %>
+
     <header>
     
       <h1>Guide to Washington&rsquo;s<span class="secondary">hiking trails</span></div></h1>
@@ -15,7 +17,7 @@
     <main>
 
       <p class="intro">
-        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros
+        Whether you like walks in the woods or multiday backpacks, “getting closer to nature” is a core value of many Washingtonians. Like a hiker on Mount Si, The Seattle Times keeps on pushing when it comes to covering old-favorite hikes as well as new discoveries. Here’s a collection of such reports – and we’ll keep adding more. Before any hike, check with <a href="www.wta.org">Washington Trails Association</a> for the latest on conditions and access. Happy trails!
       </p>
 
       <section class="trail-info">
@@ -23,10 +25,10 @@
 
           Search by mileage:
               <select class="milesFilter">
-                <option limitValue = "">Show all</option>
-                <option limitValue = "10">1- 10</option>
-                <option limitValue = "20">11 - 20</option>
-                <option limitValue = "none">21+</option>
+                <option value = "">Show all</option>
+                <option value = "1;10">1 - 10</option>
+                <option value = "11;20">11 - 20</option>
+                <option value = "21;1000">21+</option>
               </select>
 
           <!-- by region -->
@@ -64,7 +66,7 @@
         <%
           json.trails.forEach(function(x) { %>
 
-          <div miles="<%= x.miles %>" region="<%= x.region %>">
+          <div miles="<%= x.miles %>" region="<%= x.region %>" class="trail">
             <h2><%= x.name %></h2>
 
             <ul class="trail-detail">
@@ -74,8 +76,10 @@
 
               <div class="detail-map">
                 <div class="img-caption-summary">
+                  <% if (x.image) { %>
                   <img src="./assets/trailphotos/<%= x.image %>.jpg">
                   <p class="caption"><%= x.caption%></p>
+                  <% } %>
 
                   <p class="summary">
                     <%= x.summary %>
@@ -87,10 +91,15 @@
                 <div class="map-container">
                   <leaflet-map zoom="7" lat="<%= x.lat %>" lng="<%= x.lng %>">
                     <tile-layer layer="esriTopographic"></tile-layer>
+                      <map-options>
+                       {
+                         "scrollWheelZoom": false
+                       }
+              </map-options>
                     <map-marker class="locationMarker" lat="<%= x.lat %>" lng="<%= x.lng %>">
                       <b><u><%= x.name %></u></b>
                       <br><%= x.area %> - <%= x.region %>
-                      <br><a href="https://www.google.com/maps/place/Ancient+Lakes+trail+head/@<%= x.lat %>,<%= x.lng %>">Get directions</a>
+                      <br><a href="https://www.google.com/maps/@<%= x.lat %>,<%= x.lng %>">Get directions</a>
                     </map-marker>
                   </leaflet-map>
                 </div>
@@ -103,9 +112,11 @@
         
       </section>
 
-
+      <%= t.include("partials/_dontMiss.html", { data: json.elsewhere }) %>
 
     </main>
+
+     <div class="bottom-ad"><%= t.include("partials/_ad.html", { type: "bannerBottom" }) %></div>
 
     <%= t.include("partials/_navBottom.html") %>
 
