@@ -23,13 +23,25 @@
       <section class="trail-info">
         <div class="filters">
 
-          Search by mileage:
-              <select class="milesFilter">
-                <option value = "">Show all</option>
-                <option value = "1;10">1 - 10</option>
-                <option value = "11;20">11 - 20</option>
-                <option value = "21;1000">21+</option>
-              </select>
+          <h3>Find a trail near you</h3>
+
+          <div class="location-bar">
+            Sort by proximity: 
+            <input class="address" placeholder="Address?">
+            <img class="gpsIcon" src="./assets/gps.svg">
+            <button class="addressGo">GO</button>
+          </div>
+
+          <div class="mileage-region-container">
+            <div class="searchByMileage">
+              Search by mileage:
+                <select class="milesFilter">
+                  <option value = "">Show all</option>
+                  <option value = "1;10">1 - 10</option>
+                  <option value = "11;20">11 - 20</option>
+                  <option value = "21;1000">21+</option>
+                </select>
+            </div>
 
           <!-- by region -->
 
@@ -47,18 +59,20 @@
               }
             }) %>
 
-
-          Search by region:
-            <select class="regionsList">
-              <option value="">
-                Show all
-              </option>
-            <% for (var i=0; i < regions.length; i++) { %>
-              <option value="<%= regions[i] %>">
-                <%= regions[i] %>
-              </option>
-            <% } %>
-            </select>
+          <div class="searchByRegion">
+            Search by region:
+              <select class="regionsList">
+                <option value="">
+                  Show all
+                </option>
+              <% for (var i=0; i < regions.length; i++) { %>
+                <option value="<%= regions[i] %>">
+                  <%= regions[i] %>
+                </option>
+              <% } %>
+              </select>
+            </div>
+          </div>
 
           <!-- end of by region -->
         </div>
