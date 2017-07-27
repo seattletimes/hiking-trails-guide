@@ -5,15 +5,15 @@ var endpoint = "https://maps.googleapis.com/maps/api/geocode/json?address="
 module.exports = {
   address: function(address, callback) {
     address = address.replace(/\s/g, '+');
-    var bounds = "&bounds=47.4955511,-122.4359085|47.734145,-122.2359032";
+    var bounds = "&bounds=45.455486, -124.593898|49.056318, -117.027313";
     xhr(endpoint + address + bounds, function(err, data) {
       if (err) return callback(err);
       if (data.status == "ZERO_RESULTS") {
         // invalid entry
         callback("No results");
-      } else if (data.results[0].formatted_address.indexOf("Seattle") < 0) {
-        // not in seattle
-        callback("Not in Seattle");
+      } else if (data.results[0].formatted_address.indexOf("WA") < 0) {
+        // not in WA
+        callback("Not in WA");
       } else {
         var lat = data.results[0].geometry.location.lat;
         var lng = data.results[0].geometry.location.lng;

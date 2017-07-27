@@ -54,150 +54,152 @@ main {
       padding: 30px;
       font-size: 14px;
       line-height: 20px;
+      padding-top: 15px;
 
     }
   }
 
-  .trail-info {
-    max-width: 750px;
-    margin: auto;
-    padding: 10px;
+.filters {
+  font-family: @df-sans;
+  text-align: center;
+  padding: 20px 10px 25px 10px;
+  max-width: 750px;
+  margin: auto;
+}
 
-    @media @mobile {
-      padding: 0 15px 0 15px;
-      font-size: 15px;
-    }
+.trail-info {
+  max-width: 750px;
+  margin: auto;
+  padding: 10px;
 
-    .filters {
-      font-family: @df-sans;
-      text-align: center;
-      padding: 20px 0 40px 0;
+  @media @mobile {
+    padding: 0 15px 0 15px;
+    font-size: 15px;
+  }
 
-      h3 {
-        font-family: @df-sans;
-        text-transform: uppercase;
-        // background-color: @dark-brown;
-        // margin: auto;
-        // color: white;
-        // padding: 8px;
-        // border-radius: 9px;
-        // margin-bottom: 20px;
-      }
-    }
+  .results {
+    font-family: @df-sans;
+    // font-weight: bold;
+    // color: @df-middle-gray;
 
-    h2 {
-      font-size: 35px;
-      margin-bottom: 10px;
-      font-style: italic;
-
-      @media @mobile {
-        font-size: 25px;
-      }
-    }
-
-    h2::after {
-      content: "";
-      display: block;
-      height: 5px;
-      background-color: @light-brown;
-      width: 25%;
-
-      @media @mobile {
-        width: 45%;
-      }
-    }
-
-    .trail-detail {
-      font-family: @df-sans;
-      list-style-type: none;
-      padding: 8px 0 5px 0;
-      text-transform: uppercase;
-      font-size: 14px;
-      color: @df-middle-gray;
+    .resultsCounter {
       font-weight: bold;
     }
+  }
 
-    .detail-map {
-      .display-flex();
+  h2 {
+    font-size: 35px;
+    margin-bottom: 10px;
+    font-style: italic;
+
+    @media @mobile {
+      font-size: 25px;
+    }
+  }
+
+  h2::after {
+    content: "";
+    display: block;
+    height: 5px;
+    background-color: @light-brown;
+    width: 25%;
+
+    @media @mobile {
+      width: 45%;
+    }
+  }
+
+  .trail-detail {
+    font-family: @df-sans;
+    list-style-type: none;
+    padding: 8px 0 5px 0;
+    text-transform: uppercase;
+    font-size: 14px;
+    color: @df-middle-gray;
+    font-weight: bold;
+  }
+
+  .detail-map {
+    .display-flex();
+
+    @media @mobile {
+      display: block;
+    }
+    
+    .img-caption-summary {
+      .flex(0 0 70%);
+      padding-right: 20px;
+      padding-bottom: 10px;
+
+      @media @mobile {
+        padding-right: 0px;
+        padding-bottom: 30px;
+      }
+
+      img {
+        width: 100%;
+      }
+
+      .caption {
+        font-size: 13px;
+        font-family: @df-sans;
+        display: block;
+        color: @df-middle-gray;
+        margin-top: 2px;
+
+        @media @mobile {
+          font-size: 12px;
+        }
+      }
+
+      .summary {
+        margin-top: 0px;
+      }
+
+      .button {
+        font-family: @df-sans;
+        text-transform: uppercase;
+        padding: 10px;
+        color: white;
+        margin-top: 15px;
+        height: 30px;
+        font-size: 12px;
+        background: @dark-brown;
+        border: 1px solid @df-light-gray;
+        border-radius: 4px;
+
+        @media @mobile {
+          width: 100px;
+          height: 30px;
+          margin-bottom: 10px;
+        }
+
+        &:hover, &:focus {
+          background: @light-brown;
+          color: black;
+        }
+      }
+    }
+    
+    .map-container {
+      .flex(0 0 30%);
+      font-family: @df-sans;
 
       @media @mobile {
         display: block;
       }
-      
-      .img-caption-summary {
-        .flex(0 0 70%);
-        padding-right: 20px;
-        padding-bottom: 10px;
 
-        @media @mobile {
-          padding-right: 0px;
-          padding-bottom: 30px;
-        }
+      leaflet-map {
+        height: 250px;
+        width: 100%;
 
-        img {
-          width: 100%;
-        }
-
-        .caption {
-          font-size: 13px;
-          font-family: @df-sans;
-          display: block;
-          color: @df-middle-gray;
-          margin-top: 2px;
-
-          @media @mobile {
-            font-size: 12px;
-          }
-        }
-
-        .summary {
-          margin-top: 0px;
-        }
-
-        .button {
-          font-family: @df-sans;
-          text-transform: uppercase;
-          padding: 10px;
-          color: white;
-          margin-top: 15px;
-          height: 30px;
-          font-size: 12px;
-          background: @dark-brown;
-          border: 1px solid @df-light-gray;
-          border-radius: 4px;
-
-          @media @mobile {
-            width: 100px;
-            height: 30px;
-            margin-bottom: 10px;
-          }
-
-          &:hover, &:focus {
-            background: @light-brown;
-            color: black;
-          }
-        }
-      }
-      
-      .map-container {
-        .flex(0 0 30%);
-        font-family: @df-sans;
-
-        @media @mobile {
-          display: block;
-        }
-
-        leaflet-map {
-          height: 250px;
-          width: 100%;
-
-          &:not([ready]) {
-            opacity: 0;
-          }
+        &:not([ready]) {
+          opacity: 0;
         }
       }
     }
   }
+}
 
   hr {
     background-color: pink;
@@ -220,9 +222,14 @@ main {
 }
 
 .location-bar {
+
+  @media @mobile {
+    width: 100%;
+  }
+
   label {
     font-size: 15px;
-    padding-bottom: 20px;
+    padding-bottom: 15px;
   }
 
   button {
@@ -232,26 +239,43 @@ main {
     img {
       height: 18px;
     }
+
+    @media @mobile {
+      width: 100%;
+    }
   }
 
+  .mobileOnlyGPS {
+    display: none;
 
-  // .milesText {
-  //   outline: none;
-  //   display: inline-block;
-  //   width: 100px;
-  //   padding: 7px;
-  //   border: none;
-  //   border-bottom: 1px solid @df-middle-gray;
-  //   background: transparent;
-  //   margin-bottom: 10px;
-  //   font: 16px @df-sans;
-  //   height: 45px;
-  // }
+    @media @mobile {
+      display: block;
+      font-family: @df-sans;
+      text-transform: uppercase;
+      font-size: 12px;
+      padding-bottom: 5px;
+      color: @df-middle-gray;
+      cursor: pointer;
+
+      &:hover{
+        font-weight: bold;
+      }
+    }
+
+    img {
+      width: 12px;
+    }
+  }
 
   .address {
     position: relative; 
-    height: 30px;
-    width: 330px;
+    height: 33px;
+    width: 380px;
+
+    @media @mobile {
+      width: 100%;
+      margin-bottom: 5px;
+    }
   }
 
   .gpsIcon {
@@ -261,6 +285,15 @@ main {
     cursor: pointer;
     right: 28px;
     top: 6px;
+    opacity: .7;
+
+    &:hover {
+      opacity: 1;
+    }
+
+    @media @mobile {
+      display: none;
+    }
   }
 
   .addressGo {
@@ -269,10 +302,16 @@ main {
     padding: 10px;
     font-weight: bold;
     cursor: pointer;
+    right: 29px;
 
     &:hover {
       background-color: @dark-brown;
       color: white;
+    }
+
+    @media @mobile {
+      right: 0px;
+      border-radius: 5px;
     }
   }
 
@@ -281,24 +320,54 @@ main {
 
 .mileage-region-container {
   .display-flex();
-  .flex-wrap(wrap);
+  padding-top: 50px;
 
-  padding-top: 20px;
+  @media @mobile {
+    .flex-wrap(wrap);
+    padding-top: 10px;
+  }
+
+  select {
+    height: 30px;
+    background-color: white;
+    font-size: 14px;
+    border: 1px solid @df-light-gray;
+  }
 
   .searchByMileage {
-    .flex(0 0 50%);
+    .flex(0 0 60%);
+
+    .milesFilter {
+      .display-flex();
+      margin-left: auto;
+
+      @media @mobile {
+        width: 100%;
+      }
+    }
 
     @media @mobile {
+      width: 100%;
       .flex(0 0 100%);
       padding-bottom: 10px;
+      margin:0px;
     }
   }
 
   .searchByRegion {
-    .flex(0 0 50%);
+    .flex(0 0 40%);
+    .display-flex();
+    margin-right: auto;
 
     @media @mobile {
       .flex(0 0 100%);
+      padding-bottom: 5px;
+    }
+
+    .regionsList {
+      @media @mobile {
+        width: 100%;
+      }
     }
   }
 }

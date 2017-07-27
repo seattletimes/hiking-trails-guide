@@ -20,28 +20,19 @@
         Whether you like walks in the woods or multiday backpacks, “getting closer to nature” is a core value of many Washingtonians. Like a hiker on Mount Si, The Seattle Times keeps on pushing when it comes to covering old-favorite hikes as well as new discoveries. Here’s a collection of such reports – and we’ll keep adding more. Before any hike, check with <a href="www.wta.org">Washington Trails Association</a> for the latest on conditions and access. Happy trails!
       </p>
 
-      <section class="trail-info">
-        <div class="filters">
-
-          <h3>Find a trail near you</h3>
+      <div class="filters">
 
           <div class="location-bar">
-            Sort by proximity: 
-            <input class="address" placeholder="Address?">
+            <div class="mobileOnlyGPS">
+              <img class="mobile-GPS-icon" src="./assets/gps.svg"> Current location
+            </div>
+
+            <input class="address" placeholder="Sort hiking trails by proximity to you">
             <img class="gpsIcon" src="./assets/gps.svg">
             <button class="addressGo">GO</button>
           </div>
 
-          <div class="mileage-region-container">
-            <div class="searchByMileage">
-              Search by mileage:
-                <select class="milesFilter">
-                  <option value = "">Show all</option>
-                  <option value = "1;10">1 - 10</option>
-                  <option value = "11;20">11 - 20</option>
-                  <option value = "21;1000">21+</option>
-                </select>
-            </div>
+          <div class="mileage-region-container hidden">
 
           <!-- by region -->
 
@@ -59,11 +50,10 @@
               }
             }) %>
 
-          <div class="searchByRegion">
-            Search by region:
+          <div class="searchByRegion ">
               <select class="regionsList">
                 <option value="">
-                  Show all
+                  Filter by region
                 </option>
               <% for (var i=0; i < regions.length; i++) { %>
                 <option value="<%= regions[i] %>">
@@ -72,9 +62,31 @@
               <% } %>
               </select>
             </div>
+
+            <div class="searchByMileage">
+                <select class="milesFilter">
+                  <option value = "">Filter by hike length</option>
+                  <option value = "1;5">1 - 5 miles, roundtrip</option>
+                  <option value = "6;10"> 6 - 10 </option>
+                  <option value = "11;15"> 11 - 15
+                  <option value = "16;1000">16+</option>
+                </select>
+            </div>
           </div>
 
           <!-- end of by region -->
+        </div>
+
+      <section class="trail-info">
+        <div class="results">
+          <% 
+            var trailsList = json.trails;
+            for (var i=1; i <= trailsList.length; i++){
+              var counter = i;
+            };
+          %>
+
+          <span class="resultsCounter"><%= counter %></span> hiking trail(s)</span>
         </div>
 
         <%
@@ -107,13 +119,13 @@
                     <tile-layer layer="esriTopographic"></tile-layer>
                       <map-options>
                        {
-                         "scrollWheelZoom": false
+                         "scrollWheelZoom": false,
+                         "dragging": false
                        }
               </map-options>
                     <map-marker class="locationMarker" lat="<%= x.lat %>" lng="<%= x.lng %>">
-                      <b><u><%= x.name %></u></b>
+                      <b><%= x.name %></b>
                       <br><%= x.area %> - <%= x.region %>
-                      <br><a href="https://www.google.com/maps/@<%= x.lat %>,<%= x.lng %>">Get directions</a>
                     </map-marker>
                   </leaflet-map>
                 </div>

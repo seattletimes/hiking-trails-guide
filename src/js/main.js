@@ -14,8 +14,15 @@ var milesFilter = $.one("select.milesFilter");
 var trailMiles = $("[miles]");
 
 var gpsLocator = $.one("img.gpsIcon");
+var mobileGPSLocator = $.one(".mobileOnlyGPS");
 var locationInput = $.one("input.address");
 var addressSearch = $.one("button.addressGo");
+
+var milesSorting = $.one(".searchByMileage");
+var regionSorting = $.one(".searchByRegion");
+
+var resultsCounter = $.one("div.results .resultsCounter");
+var resultsField = $.one(".results");
 
 var mapElement = $.one("leaflet-map");
 var map = mapElement.map;
@@ -67,6 +74,7 @@ var sortByDistance = function([lat, lng]) {
   var container = $.one(".trail-info");
   // console.table(trails);
   trails.forEach(t => container.appendChild(t.element));
+
 };
 
 var getLocation = function(e) {
@@ -95,6 +103,17 @@ var returnKey = function(r) {
   };
 };
 
+var updateResults = function(list) {
+  var counter = 0;
+
+  list.forEach(function(i) {
+    if (i.show == true) {
+      counter += 1;
+    };
+  });
+    resultsCounter.innerHTML = counter;
+};
+
 var filterByRegion = function(list) {
   var value = regionFilter.value;
   if (!value) return;
@@ -106,6 +125,7 @@ var filterByRegion = function(list) {
       item.show = false;
     }
   });
+    updateResults(list);
 };
 
 //filter by miles
@@ -120,6 +140,8 @@ var filterByMiles = function(list) {
       item.show = false;
     }
   });
+
+  updateResults(list);
 };
 
 var showHide = function(list) {
@@ -142,6 +164,7 @@ var applyFilters = function() {
 addressSearch.addEventListener("click", getAddress);
 locationInput.addEventListener("keydown", returnKey)
 gpsLocator.addEventListener("click", getLocation);
+mobileGPSLocator.addEventListener("click", getLocation)
 regionFilter.addEventListener("change", applyFilters);
 milesFilter.addEventListener("change", applyFilters);
 
