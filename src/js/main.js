@@ -103,17 +103,6 @@ var returnKey = function(r) {
   };
 };
 
-var updateResults = function(list) {
-  var counter = 0;
-
-  list.forEach(function(i) {
-    if (i.show == true) {
-      counter += 1;
-    };
-  });
-    resultsCounter.innerHTML = counter;
-};
-
 var filterByRegion = function(list) {
   var value = regionFilter.value;
   if (!value) return;
@@ -125,7 +114,6 @@ var filterByRegion = function(list) {
       item.show = false;
     }
   });
-    updateResults(list);
 };
 
 //filter by miles
@@ -140,25 +128,25 @@ var filterByMiles = function(list) {
       item.show = false;
     }
   });
-
-  updateResults(list);
 };
 
 var showHide = function(list) {
+  var counter = 0;
   list.forEach(function(item) {
     if (item.show) {
       item.element.classList.remove("hidden");
+      counter++;
     } else {
       item.element.classList.add("hidden");
     }
   });
+  resultsCounter.innerHTML = counter;
 };
 
 var applyFilters = function() {
   var filtered = $(".trail").map(el => ({ element: el, show: true }));
   [filterByMiles, filterByRegion, showHide].forEach(f => f(filtered));
 };
-
 
 
 addressSearch.addEventListener("click", getAddress);

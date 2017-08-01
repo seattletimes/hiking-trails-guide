@@ -193,6 +193,11 @@ main {
         height: 250px;
         width: 100%;
 
+        @media @mobile {
+          height: 150px;
+          width: 100%;
+        }
+
         &:not([ready]) {
           opacity: 0;
         }
@@ -215,6 +220,7 @@ main {
   opacity: .6;
   width: 16px;
   height: 16px;
+  cursor: default;
 }
 
 .hidden {
@@ -299,10 +305,10 @@ main {
   .addressGo {
     position: relative;
     background-color: @light-brown;
-    padding: 10px;
+    padding: 9.5px;
     font-weight: bold;
     cursor: pointer;
-    right: 29px;
+    right: 30px;
 
     &:hover {
       background-color: @dark-brown;
@@ -370,4 +376,16 @@ main {
       }
     }
   }
+}
+
+.credits {
+  font-family: @df-sans;
+  font-size: 14px;
+  max-width: 600px;
+  margin: auto;
+  text-align: center;
+}
+
+.break {
+  display: block;
 }

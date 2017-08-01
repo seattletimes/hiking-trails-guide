@@ -27,7 +27,7 @@
               <img class="mobile-GPS-icon" src="./assets/gps.svg"> Current location
             </div>
 
-            <input class="address" placeholder="Sort hiking trails by proximity to you">
+            <input class="address" placeholder="Enter your location to sort trails by proximity to you">
             <img class="gpsIcon" src="./assets/gps.svg">
             <button class="addressGo">GO</button>
           </div>
@@ -116,17 +116,19 @@
 
                 <div class="map-container">
                   <leaflet-map zoom="7" lat="<%= x.lat %>" lng="<%= x.lng %>">
+
                     <tile-layer layer="esriTopographic"></tile-layer>
                       <map-options>
                        {
                          "scrollWheelZoom": false,
                          "dragging": false
                        }
-              </map-options>
-                    <map-marker class="locationMarker" lat="<%= x.lat %>" lng="<%= x.lng %>">
-                      <b><%= x.name %></b>
-                      <br><%= x.area %> - <%= x.region %>
-                    </map-marker>
+
+                     </map-options>
+
+            
+                    <map-marker class="locationMarker" lat="<%= x.lat %>" lng="<%= x.lng %>"></map-marker>
+
                   </leaflet-map>
                 </div>
               </div>
@@ -135,8 +137,13 @@
 
         <% });%>
 
-        
       </section>
+
+      <div class="credits">
+        Compiling by <b>Vanessa Martínez, Shirley Qiu</b> and <b>Brian J. Cantwell</b>
+        <span class="break">Development by <b>Vanessa Martínez</b> and <b>Thomas Wilburn</b></span>
+        <span class="break">Illustration by <b>Vanessa Martínez</b></span>
+      </div>
 
       <%= t.include("partials/_dontMiss.html", { data: json.elsewhere }) %>
 
