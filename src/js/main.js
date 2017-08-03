@@ -90,7 +90,9 @@ var getLocation = function(e) {
 };
 
 var getAddress = function(e) {
-  geolocation.address(e.value, function(err, coords) {
+
+  var addressValue = locationInput.value;
+  geolocation.address(addressValue, function(err, coords) {
     if (err) return console.log(err);
     sortByDistance(coords);
   })

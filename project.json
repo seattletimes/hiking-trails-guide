@@ -14,7 +14,7 @@
   "url": "https://projects.seattletimes.com/2017/washington-hiking-trails-guide/",
   "image": "assets/social.jpg",
   "sheets": ["1C50sLcqf59tGvtK2IYK4nizYCLW6LN8uhwmKPgpR-3c"],
-  "standout": false,
+  "standout": true,
   "embedded": false,
-  "production": false
+  "production": true
 }
