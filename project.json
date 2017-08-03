@@ -6,12 +6,12 @@
     },
     "live": {
       "bucket": "projects.seattletimes.com",
-      "path": ""
+      "path": "2017/washington-hiking-trails-guide"
     }
   },
   "title": "Guide to Washington's hiking trails",
   "description": "Find a hiking trail near you with this interactive guide to Washington state's great outdoors.",
-  "url": "",
+  "url": "https://projects.seattletimes.com/2017/washington-hiking-trails-guide/",
   "image": "assets/social.jpg",
   "sheets": ["1C50sLcqf59tGvtK2IYK4nizYCLW6LN8uhwmKPgpR-3c"],
   "standout": false,

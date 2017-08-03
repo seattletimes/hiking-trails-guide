@@ -23,7 +23,7 @@
     "difficulty": 1,
     "region": "North Cascades",
     "area": "Mount Baker area",
-    "miles": 8,
+    "miles": 9,
     "elevation": 500,
     "link": "http://www.seattletimes.com/life/outdoors/early-season-hikes-near-mount-baker-try-lovely-baker-lake/"
   },
@@ -49,7 +49,7 @@
     "summary": "Take an easy hike to a beaver pond teeming with wildlife, then kick back with a cold one at an outpost of a favorite Seattle brewery.",
     "region": "Puget Sound and Islands",
     "area": "Camano Island",
-    "miles": 1.5,
+    "miles": 2,
     "elevation": 125,
     "link": "http://www.seattletimes.com/life/travel/a-hike-and-a-happy-hour-explore-splendid-camano-island-and-its-new-naked-city-pub/"
   },
@@ -60,7 +60,10 @@
     "image": "carbon-river-road",
     "caption": "Foot and bike traffic are the only means of transportation through the Carbon River entrance to the national park. (Erika Schultz / The Seattle Times)",
     "summary": "Here's a pick from the ‘Creaky Knees’ guide that focuses on national parks and monuments",
+    "region": "Mount Rainier Area",
     "area": "Mount Rainier National Park",
+    "miles": 6,
+    "elevation": 340,
     "link": "http://www.seattletimes.com/life/travel/creaky-knees-author-names-5-great-spring-hikes-that-wont-wear-you-out/"
   },
   {
@@ -98,6 +101,9 @@
     "image": "grand-forest-trails",
     "caption": "Enjoy the sunlight filtering through the tall trees in Bainbridge Island's Grand Forest. (Greg Gilbert / The Seattle Times)",
     "summary": "Plentiful waypoints make it easy to find your way through the maze of hikes in this multi-section preserve that’s close to civilization but doesn’t feel like it.",
+    "region": "Puget Sound and Islands",
+    "area": "Bainbridge Island",
+    "miles": "3 per trail",
     "link": "http://www.seattletimes.com/life/travel/5-great-rainy-day-hikes-near-seattle/"
   },
   {
@@ -185,6 +191,8 @@
     "image": "pacific-crest-trail",
     "caption": "Lupine, Indian paintbrush and western bistort fill a meadow in the Goat Rocks Wilderness as Mount Adams dominates the southern horizon. (Terry Wood)",
     "summary": "The national scenic trail’s northern leg offers some of its grandest views. Here are some trail veterans’ favorite stretches.",
+    "region": "Washington state",
+    "miles": "60+",
     "link": "http://www.seattletimes.com/life/travel/the-most-wow-worthy-pacific-crest-trail-hikes-in-washington/"
   },
   {
@@ -218,10 +226,11 @@
     "lng": -121.9973853,
     "lat": 47.5192633,
     "image": "tiger-mountain-talus-rocks",
-    "caption": "A path between three boulders in the Talus Rocks on Tiger Mountain, Aug. 16, 2015. (Photo courtesy of Dennis Bratland)",
+    "caption": "A path in the Talus Rocks on Tiger Mountain. Make sure you bring a map, as the trail system can be confusing. (Photo courtesy of Dennis Bratland)",
     "summary": "Rainy-day hike: Tiger Mountain is an urban-adjacent playground full of little delights, both natural and man-made. Talus Rocks, an intriguing cluster of giant boulders, is a favorite.",
     "region": "Issaquah Alps",
     "area": "Tiger Mountain",
+    "miles": 3.5,
     "link": "http://www.seattletimes.com/life/travel/5-great-rainy-day-hikes-near-seattle/"
   },
   {
@@ -243,7 +252,7 @@
     "lng": -120.5030424,
     "lat": 46.8456148,
     "image": "umtanum-ridge-crest-trail",
-    "caption": "Central Washington University students hoof up the dusty Umtanum Ridge Crest trail. (Evan Bush/The Seattle Times)",
+    "caption": "Central Washington University students hoof up the dusty Umtanum Ridge Crest trail. (Evan Bush / The Seattle Times)",
     "summary": "A straightforward, short and steep hike that offers beautiful views of volcanoes and wildflowers, the Umtanum Ridge Crest Trail is worth a sweaty slog through sunny canyonlands near the Yakima River Canyon.",
     "difficulty": 3,
     "region": "Central Washington",
@@ -289,7 +298,8 @@
     "summary": "A good early-summer warmup hike from the \"Creaky Knees\" guide.",
     "region": "Mount Rainier Area",
     "area": "SW - Longmire / Paradise",
-    "miles": 11,
+    "miles": 7,
+    "elevation": 670,
     "link": "http://www.seattletimes.com/life/travel/creaky-knees-author-names-5-great-spring-hikes-that-wont-wear-you-out/"
   },
   {
@@ -297,10 +307,11 @@
     "lng": -121.7566827,
     "lat": 46.9352285,
     "image": "wonderland",
-    "caption": "Near Tahoma Glacier on the west flank of Mount Rainier, people hike on Emerald Ridge on the Wonderland Trail. (Drew Perine / The News Tribune",
+    "caption": "Near Tahoma Glacier on the west flank of Mount Rainier, people hike on Emerald Ridge on the Wonderland Trail. (Drew Perine / The News Tribune)",
     "summary": "The famed 93-mile loop around Mount Rainier is more than a century old. Here are some things to know about the trail.",
     "difficulty": 5,
     "region": "Mount Rainier Area",
+    "area": "Paradise",
     "miles": 93,
     "elevation": 22000,
     "link": "http://www.seattletimes.com/life/travel/on-wonderland-trails-centennial-100-things-to-know/"

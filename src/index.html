@@ -97,7 +97,9 @@
 
             <ul class="trail-detail">
               <li>Distance: <%= x.miles %> miles, roundtrip</li>
-              <li>Elevation gain: <%= x.elevation %> ft.</li>
+              <% if (x.elevation) { %>
+                <li>Elevation gain: <%= x.elevation %> ft.</li>
+              <% } %>
             </ul>
 
               <div class="detail-map">
@@ -115,7 +117,7 @@
                 </div>
 
                 <div class="map-container">
-                  <leaflet-map zoom="7" lat="<%= x.lat %>" lng="<%= x.lng %>">
+                  <leaflet-map zoom="9" lat="<%= x.lat %>" lng="<%= x.lng %>">
 
                     <tile-layer layer="esriTopographic"></tile-layer>
                       <map-options>
@@ -143,6 +145,7 @@
         Compiling by <b>Vanessa Martínez, Shirley Qiu</b> and <b>Brian J. Cantwell</b>
         <span class="break">Development by <b>Vanessa Martínez</b> and <b>Thomas Wilburn</b></span>
         <span class="break">Illustration by <b>Vanessa Martínez</b></span>
+        <span class="break">Additional information: Washington Trails Association</span>
       </div>
 
       <%= t.include("partials/_dontMiss.html", { data: json.elsewhere }) %>
